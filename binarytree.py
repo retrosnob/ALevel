@@ -9,10 +9,10 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
-    def add(self, root, data):
+    def add(self, data, root):
         if root is None:
-            pass
             # Create a new root
+            self.root = BinaryTree.Node(data)
         elif data > root.data:
             # go right
             if root.right is None:
@@ -21,7 +21,7 @@ class BinaryTree:
                 node = BinaryTree.Node(data)
                 root.right = node
             else:
-                self.add(root.right, data)
+                self.add(data, root.right)
         else:
             # go left
             if root.left is None:
@@ -30,4 +30,12 @@ class BinaryTree:
                 node = BinaryTree.Node(data)#
                 root.left = node
             else:
-                self.add(root.left, data)
+                self.add(data, root.left)
+
+    def inorder(self, root):
+        if root is None:
+            return
+        else:
+            self.inorder(root.left)
+            print(root.data)
+            self.inorder(root.right)

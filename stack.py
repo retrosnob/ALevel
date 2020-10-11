@@ -1,4 +1,5 @@
 class Stack1:
+    """Uses a Python list"""
     def __init__(self, maxitems):
         self._stack = []
         self._maxitems = maxitems
@@ -19,6 +20,7 @@ class Stack1:
 
 
 class Stack2:
+    """Uses a linked list"""
     class StackEntry:
         def __init__(self, item):
             self.item = item

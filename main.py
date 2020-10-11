@@ -1,16 +1,8 @@
-# This is a sample Python script.
+from binarytree import BinaryTree
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+tree = BinaryTree()
+tree.add(50, tree.root)
+tree.add(25, tree.root)
+tree.add(75, tree.root)
+tree.add(33, tree.root)
+tree.inorder(tree.root)
