@@ -32,10 +32,35 @@ class BinaryTree:
             else:
                 self.add(data, root.left)
 
+    def preorder(self, root):
+        if root:
+            print(root.data)
+            self.preorder(root.left)
+            self.preorder(root.right)
+
     def inorder(self, root):
-        if root is None:
-            return
-        else:
+        if root:
             self.inorder(root.left)
             print(root.data)
             self.inorder(root.right)
+
+    def postorder(self, root):
+        if root:
+            self.postorder(root.left)
+            self.postorder(root.right)
+            print(root.data)
+
+if __name__ == '__main__':
+    tree = BinaryTree()
+    tree.add('I', tree.root)
+    tree.add('P', tree.root)
+    tree.add('M', tree.root)
+    tree.add('C', tree.root)
+    tree.add('H', tree.root)
+    tree.add('S', tree.root)
+    print('preorder')
+    tree.preorder(tree.root)
+    print('inorder')
+    tree.inorder(tree.root)
+    print('postorder')
+    tree.postorder(tree.root)
